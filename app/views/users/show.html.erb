@@ -4,13 +4,29 @@
     <div class="row">
       <div class="col">
         <div class="text-center">
-          <%= mail_to @user.email, nil, :encode => :javascript%>
-          <% if user_signed_in? && @user == current_user || current_user.admin? %>
+          ПІБ:
+          <%= @user.fullname %><br>
+          Адреса:
+          <%= @user.address %><br>
+          Посада:
+          <%= @user.position.name %><br>
+          Натисніть, щоб написати користувачу:
+          <%= mail_to @user.email, nil, :encode => :javascript%><br>
+          <% if user_signed_in? && @user == current_user%>
             <hr>
             <%= link_to "Setting", edit_user_registration_path, class:"btn btn-warning"%>
           <%end%>
         </div>
       </div>
     </div>
+    Історія роботи працівника
+    <% @user.histories.each do |x|  %>
+      <br>
+      Коли прийшов на роботу:<br><%= x.at_work%>
+      <br>
+      Коли закінчив робити:<br>
+      <%= x.not_at_work%>
+      <hr>
+    <% end %>
   </div>
 </center>
