@@ -5,8 +5,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       ## Database authenticatable
       t.integer :position_id
-      t.datetime :at_work
-      t.datetime :not_at_work
       t.string :fullname
       t.string :address
       t.string :email,              null: false, default: ""
