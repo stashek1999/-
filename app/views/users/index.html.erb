@@ -1,0 +1,20 @@
+All users:
+<br>
+<div class='album'>
+  <div class='container'>
+    <% @users.each_slice(3) do | y | %>
+      <div class='row'>
+        <% y.each do |x| %>
+          <div class='col-sm-4 col-xs-4'>
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text"><%= x.email%></p>
+                <%= link_to "Profile", user_path(x.id), class:"btn btn-primary"%>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
