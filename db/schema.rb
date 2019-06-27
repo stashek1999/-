@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_27_172123) do
+ActiveRecord::Schema.define(version: 2019_06_27_165356) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -44,14 +44,8 @@ ActiveRecord::Schema.define(version: 2019_06_27_172123) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "positions_users", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "position_id"
-    t.index ["position_id"], name: "index_positions_users_on_position_id"
-    t.index ["user_id"], name: "index_positions_users_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
+    t.integer "position_id"
     t.datetime "at_work"
     t.datetime "not_at_work"
     t.string "fullname"
@@ -70,13 +64,6 @@ ActiveRecord::Schema.define(version: 2019_06_27_172123) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "users_positions", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "position_id"
-    t.index ["position_id"], name: "index_users_positions_on_position_id"
-    t.index ["user_id"], name: "index_users_positions_on_user_id"
   end
 
 end
