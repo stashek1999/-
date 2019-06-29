@@ -1,0 +1,45 @@
+.info{
+  background: linear-gradient(0deg, #282828, #282828), url("https://bestcube.space/wp-content/uploads/Playerunknowns-Battlegrounds.jpg");
+background-blend-mode: multiply, normal;
+  background-position: center;
+  text-align: center;
+  padding: 20%;
+}
+
+.title{
+  font-size: 32px;
+  font-weight: 900;
+  padding-bottom: 20px;
+  color: #fff;
+}
+
+.subtitle{
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 20px;
+  color: #fff;
+}
+
+.search{
+  display: grid;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.td0{
+	color: white;
+}
+
+.td1{
+	color: red;
+}
+
+.td2{
+	color: green;
+}
+.td3{
+  font-size: 16px;
+  font-weight: 900;
+  padding-bottom: 20px;
+  color: #fff;
+}

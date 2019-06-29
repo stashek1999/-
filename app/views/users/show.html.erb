@@ -1,32 +1,18 @@
-<br>
-<center>
-  <div class='col-sm-4 col-xs-4'>
-    <div class="row">
-      <div class="col">
-        <div class="text-center">
-          ПІБ:
-          <%= @user.fullname %><br>
-          Адреса:
-          <%= @user.address %><br>
-          Посада:
-          <%= @user.position.name %><br>
-          Натисніть, щоб написати користувачу:
-          <%= mail_to @user.email, nil, :encode => :javascript%><br>
-          <% if user_signed_in? && @user == current_user%>
-            <hr>
-            <%= link_to "Setting", edit_user_registration_path, class:"btn btn-warning"%>
-          <%end%>
-        </div>
-      </div>
-    </div>
-    Історія роботи працівника
+<div class="info">
+  <div class="td0">Информация о продуктивности рабочего:</div>
+  <br>
+  <table class="table" border="3" text-align: "center" cols="3" bordercolor="green">
+    <tr class="td1">
+      <td>Когда пришел на работу</td>
+      <td>Когда ушел с работы</td>
+      <td>Рабочий день<td>
+    </tr>
     <% @user.histories.each do |x|  %>
-      <br>
-      Коли прийшов на роботу:<br><%= x.at_work%>
-      <br>
-      Коли закінчив робити:<br>
-      <%= x.not_at_work%>
-      <hr>
-    <% end %>
-  </div>
-</center>
+    <tr class="td2">
+      <td><%= x.at_work%></td>
+      <td><%= x.not_at_work%></td>
+      <td>12 часов</td>
+    </tr>
+    <%end%>
+  </table>
+</div>
